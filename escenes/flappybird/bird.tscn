@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dpnkyl5e7rvhr"]
+
+[ext_resource type="Script" uid="uid://dbt521vqv7065" path="res://scripts/flappy_bird/bird.gd" id="1_kwlda"]
+[ext_resource type="Texture2D" uid="uid://bnowqiw0k4jln" path="res://assets/assets/bird.png" id="1_otdeg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jjte"]
+atlas = ExtResource("1_otdeg")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ujg1i"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jjte")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2w68d"]
+size = Vector2(34, 38)
+
+[node name="bird" type="Node2D" unique_id=1949151343]
+
+[node name="bird" type="CharacterBody2D" parent="." unique_id=227836226]
+collision_layer = 15
+collision_mask = 15
+script = ExtResource("1_kwlda")
+
+[node name="bird" type="AnimatedSprite2D" parent="bird" unique_id=1976890969]
+scale = Vector2(3.5904002, 4.0256)
+sprite_frames = SubResource("SpriteFrames_ujg1i")
+frame_progress = 0.46987942
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bird" unique_id=352536551]
+position = Vector2(-2, 9)
+shape = SubResource("RectangleShape2D_2w68d")

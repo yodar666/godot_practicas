@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dgnvcm5cugacr"]
+
+[ext_resource type="Script" uid="uid://dtrueqnv74fpb" path="res://scripts/flappy_bird/kill_out_screen.gd" id="1_xoyyk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujg1i"]
+size = Vector2(57, 378)
+
+[node name="Node2D" type="Node2D" unique_id=1936549725]
+script = ExtResource("1_xoyyk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=52774091]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1397631544]
+position = Vector2(18.5, 179)
+shape = SubResource("RectangleShape2D_ujg1i")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://tta70ehwvs72"]
+
+[ext_resource type="Script" uid="uid://cjisf58388im" path="res://scripts/flappy_bird/ap_enemies.gd" id="1_1ea0q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujg1i"]
+size = Vector2(91, 376)
+
+[node name="Node2D" type="Node2D" unique_id=1504604850]
+script = ExtResource("1_1ea0q")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2037916529]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=411285710]
+position = Vector2(35.5, 178)
+shape = SubResource("RectangleShape2D_ujg1i")
+
+[node name="Timer" type="Timer" parent="." unique_id=1364350691]
+one_shot = true

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dk0mhfcd21jin"]
+
+[ext_resource type="Texture2D" uid="uid://cgk6aw5tqol20" path="res://assets/Tetris_Asset_Pack/blocks/cyan_block.png" id="2_exixk"]
+[ext_resource type="Texture2D" uid="uid://ba43i8mogj5s8" path="res://assets/Tetris_Asset_Pack/blocks/green_block.png" id="3_lkk4p"]
+[ext_resource type="Texture2D" uid="uid://lha7pfphpb0i" path="res://assets/Tetris_Asset_Pack/blocks/pink_block.png" id="4_3i3rt"]
+[ext_resource type="Texture2D" uid="uid://8oy43a6msgun" path="res://assets/Tetris_Asset_Pack/blocks/purple_block.png" id="5_aaewb"]
+[ext_resource type="Texture2D" uid="uid://5tvstons7gu0" path="res://assets/Tetris_Asset_Pack/blocks/red_block.png" id="6_almj1"]
+[ext_resource type="Texture2D" uid="uid://cavw0x025h2fm" path="res://assets/Tetris_Asset_Pack/blocks/yellow_block.png" id="7_b2drb"]
+
+[sub_resource type="GDScript" id="GDScript_bmhux"]
+script/source = "extends Node2D
+
+func _ready() -> void:
+	pass
+	
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2w68d"]
+size = Vector2(32, 32)
+
+[node name="block" type="Area2D" unique_id=2070919132]
+script = SubResource("GDScript_bmhux")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=744292969]
+
+[node name="YellowBlock" type="Sprite2D" parent="Node2D" unique_id=601408457]
+texture = ExtResource("7_b2drb")
+
+[node name="RedBlock" type="Sprite2D" parent="Node2D" unique_id=1625747593]
+visible = false
+texture = ExtResource("6_almj1")
+
+[node name="PurpleBlock" type="Sprite2D" parent="Node2D" unique_id=612324983]
+visible = false
+texture = ExtResource("5_aaewb")
+
+[node name="PinkBlock" type="Sprite2D" parent="Node2D" unique_id=476942732]
+visible = false
+texture = ExtResource("4_3i3rt")
+
+[node name="GreenBlock" type="Sprite2D" parent="Node2D" unique_id=1931115362]
+visible = false
+texture = ExtResource("3_lkk4p")
+
+[node name="CyanBlock" type="Sprite2D" parent="Node2D" unique_id=1485647828]
+visible = false
+texture = ExtResource("2_exixk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=787968907]
+shape = SubResource("RectangleShape2D_2w68d")

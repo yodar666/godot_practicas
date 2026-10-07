@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://h80rwvohkjjw"]
+
+[ext_resource type="Script" uid="uid://tymyk0ik76ua" path="res://scripts/flappy_bird/bird_screen.gd" id="1_jrqu7"]
+[ext_resource type="Texture2D" uid="uid://daurnmas5c4ox" path="res://assets/assets/background.png" id="2_tqssy"]
+[ext_resource type="PackedScene" uid="uid://dpnkyl5e7rvhr" path="res://escenes/flappybird/bird.tscn" id="3_x1hs6"]
+[ext_resource type="PackedScene" uid="uid://tta70ehwvs72" path="res://escenes/flappybird/ap_enemies.tscn" id="4_1s6t6"]
+[ext_resource type="PackedScene" uid="uid://dgnvcm5cugacr" path="res://escenes/flappybird/kill_out_screen.tscn" id="5_tbg57"]
+[ext_resource type="PackedScene" uid="uid://dy1w323of45s6" path="res://escenes/flappybird/poits_couter.tscn" id="6_h4nie"]
+[ext_resource type="Texture2D" uid="uid://bx3111mxwocki" path="res://assets/assets/floor.png" id="7_q0no1"]
+[ext_resource type="PackedScene" uid="uid://dwtg1uhcujg3d" path="res://escenes/flappybird/pause_bird.tscn" id="8_hp2xg"]
+[ext_resource type="Texture2D" uid="uid://cmme77rjmuyio" path="res://assets/assets/black_bg.png" id="9_oosk8"]
+[ext_resource type="PackedScene" uid="uid://hw1y8umbc4cm" path="res://escenes/flappybird/game_over.tscn" id="10_hcxcs"]
+[ext_resource type="PackedScene" uid="uid://cf1meyryevy0d" path="res://escenes/flappybird/win_fb.tscn" id="11_vo8gb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2w68d"]
+size = Vector2(439.5, 74)
+
+[node name="Node2D" type="Node2D" unique_id=984854413]
+script = ExtResource("1_jrqu7")
+
+[node name="entorno" type="Node2D" parent="." unique_id=1232297948]
+position = Vector2(-27, 0)
+
+[node name="Background" type="Sprite2D" parent="entorno" unique_id=1514103099]
+position = Vector2(588.5, 309.5)
+scale = Vector2(3.0466666, 3.175)
+texture = ExtResource("2_tqssy")
+
+[node name="bird" parent="." unique_id=1949151343 instance=ExtResource("3_x1hs6")]
+position = Vector2(542, 305)
+
+[node name="colision" type="Node2D" parent="." unique_id=1270837863]
+position = Vector2(-27, 0)
+
+[node name="ap_enemies" parent="colision" unique_id=1504604850 instance=ExtResource("4_1s6t6")]
+position = Vector2(1487, 607)
+scale = Vector2(3.5199952, 1.8)
+dir = -1
+
+[node name="ap_enemies2" parent="colision" unique_id=1225480146 instance=ExtResource("4_1s6t6")]
+position = Vector2(1742.0001, 1.5873526e-11)
+rotation = -3.1415925
+scale = Vector2(3.4559948, 1.0417292)
+
+[node name="kill_enemies" parent="colision" unique_id=1936549725 instance=ExtResource("5_tbg57")]
+position = Vector2(238, -25.000002)
+scale = Vector2(1.7178314, 2.0999792)
+
+[node name="suelo_cielo" type="Node2D" parent="colision" unique_id=1253826962]
+position = Vector2(359, 607)
+
+[node name="suelo" type="StaticBody2D" parent="colision/suelo_cielo" unique_id=213488304]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colision/suelo_cielo/suelo" unique_id=1105470072]
+position = Vector2(220, 41)
+shape = SubResource("RectangleShape2D_2w68d")
+
+[node name="cielo" type="StaticBody2D" parent="colision/suelo_cielo" unique_id=1989249252]
+position = Vector2(0, -681)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colision/suelo_cielo/cielo" unique_id=21074321]
+position = Vector2(220, 41)
+shape = SubResource("RectangleShape2D_2w68d")
+
+[node name="poits_couter" parent="." unique_id=995672282 instance=ExtResource("6_h4nie")]
+anchors_preset = -1
+anchor_left = 0.0
+anchor_top = 0.0
+offset_left = 543.0
+offset_top = 323.0
+offset_right = 543.0
+offset_bottom = 323.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=117568602]
+position = Vector2(557.00006, 636)
+scale = Vector2(2.9911127, 1)
+texture = ExtResource("7_q0no1")
+
+[node name="PauseBird" parent="." unique_id=859928434 instance=ExtResource("8_hp2xg")]
+
+[node name="fondos" type="Node2D" parent="." unique_id=1101438440]
+position = Vector2(-27, 0)
+
+[node name="fondo" type="Sprite2D" parent="fondos" unique_id=2106830938]
+position = Vector2(172.5, 314.5)
+scale = Vector2(2.66, 3.405)
+texture = ExtResource("9_oosk8")
+
+[node name="fondo2" type="Sprite2D" parent="fondos" unique_id=791057220]
+position = Vector2(995.99994, 315)
+scale = Vector2(2.66, 3.405)
+texture = ExtResource("9_oosk8")
+
+[node name="game_over" parent="." unique_id=1925506192 instance=ExtResource("10_hcxcs")]
+visible = false
+offset_left = 577.0
+offset_top = 285.0
+offset_right = 577.0
+offset_bottom = 285.0
+
+[node name="win_screen" parent="." unique_id=407222940 instance=ExtResource("11_vo8gb")]
+visible = false
+offset_left = 583.0
+offset_top = 307.0
+offset_right = 583.0
+offset_bottom = 307.0

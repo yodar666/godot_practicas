@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://hw1y8umbc4cm"]
+
+[ext_resource type="FontFile" uid="uid://b666hteduy60u" path="res://assets/assets/ka1.ttf" id="1_p2pot"]
+[ext_resource type="Script" uid="uid://bss3gid3isqoy" path="res://scripts/flappy_bird/game_over.gd" id="1_p5kn5"]
+
+[node name="game_over" type="Control" unique_id=407222940]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_p5kn5")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=820152148]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6862745)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1704144542]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -94.0
+offset_right = 172.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=458899726]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_p2pot")
+theme_override_font_sizes/font_size = 53
+text = "game over"
+
+[node name="play" type="Button" parent="VBoxContainer" unique_id=340145528]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_p2pot")
+theme_override_font_sizes/font_size = 27
+text = "jugar"
+
+[node name="menu" type="Button" parent="VBoxContainer" unique_id=1446114623]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_p2pot")
+theme_override_font_sizes/font_size = 27
+text = "menu"
+
+[node name="salir" type="Button" parent="VBoxContainer" unique_id=483363753]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_p2pot")
+theme_override_font_sizes/font_size = 27
+text = "salir"

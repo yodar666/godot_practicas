@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://yj68onxxkngg"]
+
+[ext_resource type="Script" uid="uid://hc18ynvegkys" path="res://scripts/flappy_bird/tuberia.gd" id="1_u04h3"]
+[ext_resource type="Texture2D" uid="uid://d4jvukejjl7uu" path="res://assets/assets/pipe.png" id="1_wgowv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2w68d"]
+size = Vector2(21.551725, 20.519154)
+
+[node name="tuberia" type="CharacterBody2D" unique_id=1118502140]
+script = ExtResource("1_u04h3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1462820736]
+texture = ExtResource("1_wgowv")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2008720010]
+position = Vector2(0, 4.000002)
+scale = Vector2(1.16, 12.4)
+collision_layer = 8
+collision_mask = 8
+
+[node name="tuberia" type="CollisionShape2D" parent="Area2D" unique_id=1113215678]
+position = Vector2(0, -1.4901161e-07)
+shape = SubResource("RectangleShape2D_2w68d")
+
+[node name="choque" type="CollisionShape2D" parent="." unique_id=929135801]
+visible = false
+position = Vector2(0, 4)
+scale = Vector2(1.16, 12.4)
+shape = SubResource("RectangleShape2D_2w68d")
+debug_color = Color(0.9181891, 6.892323e-05, 0.70485777, 0.41960785)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1905954046]
+position = Vector2(0, -114)
+rotation = -3.1415925
+target_position = Vector2(2.8840197e-05, 191)
